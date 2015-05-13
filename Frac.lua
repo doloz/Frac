@@ -34,7 +34,7 @@ function FracMethods:cut()
 		return Frac:new(value, 1, true)
 	end
 	if isInteger(self.num) and isInteger(self.den) then
-		local div = gcd(self.num, self.den)
+		local div = gcd(math.abs(self.num), math.abs(self.den))
 		return Frac:new(self.num / div, self.den / div, true)
 	else
 		return self	
